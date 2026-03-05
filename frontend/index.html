@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>URL Shortener</h1>
+
+<div class="input-group">
+  <input id="urlInput" placeholder="Enter URL here"/>
+  <button onclick="shorten()">Shorten</button>
+</div>
+
+<div id="loader" class="loader hidden"></div>
+
+<div id="resultBox" class="hidden">
+
+  
+
+  <div>
+    <input id="shortUrl" readonly />
+    <button onclick="copyUrl()">Copy</button>
+    <a id="statsLink" target="_blank">
+        <br><br>View Clicks
+    </a>
+</div>
+
+</div>
+
+<div id="toast" class="toast hidden">
+  Copied to clipboard!
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
