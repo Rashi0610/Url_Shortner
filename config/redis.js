@@ -4,9 +4,9 @@ console.log("REDIS_URL =", process.env.REDIS_URL);
 
 const redisClient = createClient({
   url: process.env.REDIS_URL,
-   socket: {
-    tls: true
-  }
+    socket: process.env.NODE_ENV === "production"
+    ? { tls: true }
+    : undefined
 });
 
 redisClient.on("error", (err) => {

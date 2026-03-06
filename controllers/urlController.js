@@ -136,3 +136,7 @@ export const getStats = expressAsyncHandler(async (req, res) => {
         </html>
     `);
 });
+
+export const homepage =expressAsyncHandler(async(req,res)=>{
+     res.sendFile(path.join(__dirname, "frontend", "index.html"));
+})
