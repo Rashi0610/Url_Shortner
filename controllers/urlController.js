@@ -33,11 +33,13 @@ export const shortner = expressAsyncHandler(async (req, res) => {
         "INSERT INTO urls(short_id, original_url) VALUES ($1,$2)",
         [short_id, url]
     );
+    const baseUrl = `${req.protocol}://${req.get("host")}`;
 
-    res.json({
-        shortUrl: `http://localhost:3000/${short_id}`,
-        statsUrl: `http://localhost:3000/stats/${short_id}`
-    });
+  res.json({
+      shortUrl: `${baseUrl}/${short_id}`,
+      statsUrl: `${baseUrl}/stats/${short_id}`
+});
+    
 
 });
 export const redirect = expressAsyncHandler(async (req, res) => {
