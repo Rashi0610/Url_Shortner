@@ -3,7 +3,10 @@ import { createClient } from "redis";
 console.log("REDIS_URL =", process.env.REDIS_URL);
 
 const redisClient = createClient({
-  url: process.env.REDIS_URL
+  url: process.env.REDIS_URL,
+   socket: {
+    tls: true
+  }
 });
 
 redisClient.on("error", (err) => {
